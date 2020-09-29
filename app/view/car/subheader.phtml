@@ -1,0 +1,18 @@
+<h1> Car list </h1>
+
+<?php
+
+$html = '
+<ul>
+    <li><a href="/MVC_template/public/car/car_index">' . READ_DATA_FROM_FILE . '</a></li>
+    <li><a href="/MVC_template/public/car/database_list">' . READ_DATA_FROM_DB_QUERY . '</a></li>
+    <li><a href="/MVC_template/public/car/database_stored_procedure">' . READ_DATA_FROM_DB_STORED_PROCEDURE . '</a></li>
+    <li><a href="/MVC_template/public/car/database_stored_procedure_with_params">' . READ_DATA_FROM_DB_STORED_PROCEDURE_PARAMETERS . '</a></li>
+    <li><a href="/MVC_template/public/car/edit">' . NOT_FOUND . '</a></li>
+</ul>
+';
+
+echo $html;
+
+;?>
+

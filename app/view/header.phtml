@@ -1,0 +1,23 @@
+<?php
+    $action = $this->getAction();
+?>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF8">
+    <link href="/MVC_template/public/style.css" rel="stylesheet" media="all">
+    <title><?php echo $this->page_title; ?></title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/MVC_template/public/home/index" <?php echo ($action == 'index' ? 'class=active' : '');?>>Home Page</a> </li>
+            <li><a href="/MVC_template/public/home/aboutProject" <?php echo ($action == 'aboutProject' ? 'class=active' : '');?>>About Project</a> </li>
+            <li><a href="/MVC_template/public/car/car_index" <?php echo ($action == 'car_index' || $action == 'database_list' || $action == 'database_stored_procedure' || $action == 'database_stored_procedure_with_params' ? 'class=active' : '');?>>Car List</a> </li>
+        </ul>
+    </nav>
+</body>

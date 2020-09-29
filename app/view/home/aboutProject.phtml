@@ -1,0 +1,110 @@
+<?php include VIEW . 'header.phtml';?>
+
+<h1>About Project view</h1>
+
+    <p>This is a <strong>simple MVC project template based on OOP and written in PHP</strong>. It also contains <strong>Database class</strong> which helps connecting to <strong>mySQL database</strong>.</p>
+    <p>I decided to write it because I needed to have fully working MVC template without using any framework.</p>
+    <p>With finishing this project everyone who doesn't want to use frameworks will not waste time in creating from scratch the MVC template.</p>
+
+<div style="margin-top:40px; margin-bottom:40px;">
+
+    <h2>How does it work?</h2>
+
+    <p><strong>index.html</strong> file is opened by default. <strong>All Important files and scripts are loaded.</strong> </p> 
+    <p>It is created an instance of a <strong>class Application</strong> which processes the URLs, checks if controller or view exists and executes them. </p>
+    <p>If there are no controller and view set in the URL then the default controller and view are set. </p> 
+    <p>If you request <strong>controller or action that not exist</strong> then the <strong>Page Not Found view</strong> is returned.</p>
+    <p>Every custom defined controller <strong>extends the base Controller class</strong>. </p> 
+    <p>In the base Controller class the view and model are set. 
+    <strong>View class</strong> implements the View logic and it is responsible for rendering the view. And the <strong>model</strong> will initialize and map your data whether you read it from file or database.</p>
+
+    <div style="margin-top:60px; margin-bottom:40px;">
+
+        <p>Let's say we have <strong>homeController</strong> and <strong>index View</strong>. </p>
+
+        <p><strong>Firstly</strong> we need to create homeController class in the Controller folder. homeController will extend the Controller class in order to inherit its properties and functions. </p>
+        <p><strong>Secondly</strong> we need to create our view <strong>index.phtml</strong> file in the view folder. <strong>Put your HTML code here</strong>. </p>
+        <p><strong>Then</strong> we need to write index function in <strong>homeController</strong> class, which will <strong>load the index.phtml file from view folder</strong>. We need to initialize the view name and pass parameters with data if there are. If there are no parameters to pass, just pass empty array. </p>
+        <p><strong>If data needs to be read</strong>, then you need to create a model where you need to create function to initialize instance of a <strong>Database class</strong> with your credentials and write your logic to execute your query or stored procedure. <strong>You can find out how in the carController</strong>.</p>
+        <p><strong>Finally</strong> we need to call the render function. <strong>If the index.phtml file exists</strong>, then the file is loaded, filled with the data and returned to the client. </p>
+
+    </div>
+</div>
+
+<h2>Project Structure</h2>
+
+<p>The project is separated in two main folders - <strong>app and public</strong>.</p>
+
+<p>The app folder contains <strong>all the server logic</strong> like Controller class, View class, all models, etc. </p> 
+<p>The public folder contains all the <strong>client logic</strong> - like base index.html file, js files, css styles, etc.</p>
+
+<p><b>App folder</b></p>
+
+    <ul>
+        <li><b>config</b> 
+            <ul>
+                <li>This folder contains file with <strong>configuration values</strong> such as database name, database user, etc.</li>
+            </ul>
+        </li>
+        <li><b>controller</b> 
+            <ul>
+                <li>This folder will contain all the <strong>custom defined Controllers</strong> which will process the methods.</li>
+            </ul>
+        </li> 
+        <li><b>core</b> 
+            <ul>
+                <li>This folder contains the base <strong>Application class</strong> which prepares the URL, checks if required controller or view exist and executes them.</li>
+                <li>There is also the <strong>Base Controller</strong> class which implements the Controller logic. It sets the View and the Model.</li>
+                <li>There is also the <strong>Base View</strong> class which implements the View logic. It is responsible for rendering the view.</li>
+            </ul>
+        </li>
+        <li><b>data</b> 
+            <ul>
+                <li>This folder contains the <strong>TXT file with cars data</strong>. It is used to show how to read data from file in compare to how to read data from Database.</li>
+                <li>There is also <strong>carsDB.txt file</strong> which contains definition of tables and procedures used for demo. You can execute the script in your phpMyAdmin in order to create the database and tables and procedures. You can set your own credentials for database connection in config.php file.</li>
+            </ul>
+        </li>
+        <li><b>Helper</b> 
+            <ul>
+                <li>This folder contains the <strong>base Database</strong> class which opens the connection to the mySQL database, closes the conection, as well as creates an instance of mysqli.</li>
+            </ul> 
+        </li>
+        <li><b>model</b> 
+            <ul>
+                <li>This folder will contain <strong>all custom defined models</strong> from the developer. They are responsible for reading and mapping the data in order to pass it to the view and show it to the client.</li>
+            </ul> 
+        </li>
+        <li><b>and view folder</b> 
+            <ul>
+                <li>This folder will contain <strong>all custom defined views</strong> or in other words all html webpages which the client will see.</li>
+            </ul> 
+        </li>
+    </ul>
+
+<p><b>Public folder</b></p>
+
+    <ul>
+        <li><b>index.html</b>
+            <ul>
+                <li>This is the <strong>init page of the Web Application</strong>. This is the first page to load. Application instance is created here in order to start the work of the Application. All required scripts and files are loaded.</li>
+            </ul>
+        </li>
+        <li><b>.htaccess</b>
+            <ul>
+                <li>Website configuration.</li>
+            </ul>
+        </li>
+        <li><b>style.css</b>
+            <ul>
+                <li>All common <strong>styles.</strong></li>
+            </ul>
+        </li>
+        <li><b>js folder</b>
+            <ul>
+                <li>This folder will contain <strong>all JavaScript files</strong>.</li>
+            </ul>
+        </li>
+    </ul>
+
+
+<?php include VIEW . 'footer.phtml';?>

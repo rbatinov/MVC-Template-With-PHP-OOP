@@ -1,0 +1,65 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 28, 2020 at 06:32 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.8
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `cars`
+--
+CREATE DATABASE IF NOT EXISTS `cars` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `cars`;
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetSpecificVehicle` (IN `vehicleid` INT)  BEGIN
+	SELECT `id`, `brand`, `model`, `year` FROM `cars`.`vehicle` WHERE `id` = vehicleid;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetVehicles` ()  BEGIN
+	SELECT `id`, `brand`, `model`, `year` FROM `cars`.`vehicle`;
+END$$
+
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vehicle`
+--
+
+CREATE TABLE `vehicle` (
+  `id` int(11) NOT NULL,
+  `brand` varchar(50) NOT NULL,
+  `model` varchar(50) NOT NULL,
+  `year` smallint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `vehicle`
+--
+
+INSERT INTO `vehicle` (`id`, `brand`, `model`, `year`) VALUES
+(1, 'Mercedes', 'Benz', 2018),
+(2, 'Honda', 'Civic', 2018),
+(3, 'BMW', 'E60', 2018);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `vehicle`
+--
+ALTER TABLE `vehicle`
+  ADD PRIMARY KEY (`id`);
+COMMIT;

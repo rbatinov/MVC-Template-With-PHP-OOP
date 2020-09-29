@@ -1,0 +1,32 @@
+<?php include VIEW . 'header.phtml';?>
+
+<?php include VIEW . '/car/subheader.phtml';?>
+
+<h2> Car list from <span class="highlight">/app/data/car.txt</span> file </h2>
+
+<h3>You can change the values in the file to see that it is wokring.</h3>
+
+<?php
+    if(array_key_exists('cars', $this->view_data)){
+        $table = '<table border=1><tr><th>id</th><th>Brand</th><th>Model</th><th>Year</th><th>Distance(km)</th></tr>';
+
+        foreach($this->view_data['cars'] as  $car){
+                $car_info = explode(',', $car);
+
+                $table.= '<tr>';
+                
+                foreach($car_info as $item){
+                    $table.= '<td>' . $item . '</td>';
+                }
+
+                $table.= '</tr>';
+        }
+
+        $table.= '</table>';
+
+        echo $table;
+    }
+?>
+
+
+<?php include VIEW . 'footer.phtml';?>

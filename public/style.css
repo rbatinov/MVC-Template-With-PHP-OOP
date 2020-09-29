@@ -1,0 +1,38 @@
+nav{
+    background-color:#9cd9c5;
+    color:white;
+}
+
+nav ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+nav ul li{
+    display: inline-block;
+}
+
+nav ul li a{
+    display: block;
+    padding: 10px 14px;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover:not(.active){
+    background-color:rgb(98, 182, 182);
+}
+
+.active{
+    background-color:#1b6a50;
+}
+
+.highlight{
+    color:#e53935;
+}
+
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+

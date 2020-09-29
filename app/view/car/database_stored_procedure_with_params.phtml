@@ -1,0 +1,49 @@
+<?php include VIEW . 'header.phtml';?>
+
+<?php include VIEW . '/car/subheader.phtml';?>
+
+<h2> Executed <span class="highlight">GetSpecificVehicle(id)</span> stored procedure with parameters</h2>
+
+<h3 style="color:green">Insert vehicle id:</h3>
+
+<form method="post" action="database_stored_procedure_with_params">
+    <input type="text" name="data" autofocus>
+    <input type="submit" name="submit" value="Send">
+</form>
+
+<?php
+
+    if(array_key_exists('cars', $this->view_data)){
+
+        $table = '<table border=1><tr><th>id</th><th>Brand</th><th>Model</th><th>Year</th></tr>';
+
+        foreach($this->view_data['cars'] as  $car){
+
+                $table.= '<tr>';
+                
+                    $table.= '<td>' . $car['id'] . '</td>';
+                    $table.= '<td>' . $car['brand'] . '</td>';
+                    $table.= '<td>' . $car['model'] . '</td>';
+                    $table.= '<td>' . $car['year'] . '</td>';
+
+                $table.= '</tr>';
+        }
+
+        $table.= '</table>';
+
+        if($this->view_data['cars']->num_rows > 0){
+            echo $table;
+        }
+        else{
+            $html = '<h3><span class="highlight">Vehicle with this id does not exist.</span></h3>';
+            
+            echo $html;
+        }
+
+        $this->view_data['cars']->close();
+    }
+
+?>
+
+
+<?php include VIEW . 'footer.phtml';?>
