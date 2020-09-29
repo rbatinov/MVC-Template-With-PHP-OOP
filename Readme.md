@@ -21,7 +21,7 @@ In the base Controller class the view and model are set.
 
 <b>View class</b> implements the View logic and it is responsible for rendering the view. And the <b>model</b> will initialize and map your data whether you read it from file or database.  
 
-
+    
 Let's say we have <b>homeController</b> and <b>index View</b>. 
 
 
