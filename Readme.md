@@ -21,12 +21,18 @@ In the base Controller class the view and model are set.
 
 <b>View class</b> implements the View logic and it is responsible for rendering the view. And the <b>model</b> will initialize and map your data whether you read it from file or database.  
 
+
 Let's say we have <b>homeController</b> and <b>index View</b>. 
 
+
 <b>Firstly</b> we need to create homeController class in the Controller folder. homeController will extend the Controller class in order to inherit its properties and functions. 
+
 <b>Secondly</b> we need to create our view <b>index.phtml</b> file in the view folder. <b>Put your HTML code here</b>. 
+
 <b>Then</b> we need to write index function in <b>homeController</b> class, which will <b>load the index.phtml file from view folder</b>. We need to initialize the view name and pass parameters with data if there are. If there are no parameters to pass, just pass empty array. 
+
 <b>If data needs to be read</b>, then you need to create a model where you need to create function to initialize instance of a<b>Database class</b> with your credentials and write your logic to execute your query or stored procedure. <b>You can find out how in the carController</b>.
+
 <b>Finally</b> we need to call the render function. <b>If the index.phtml file exists</b>, then the file is loaded, filled with the data and returned to the client. 
 
 
