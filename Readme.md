@@ -1,18 +1,25 @@
 # PHP MVC Template PHP OOP && mySQL Database
 
-This is a <b>simple MVC project template based on OOP and written in PHP</b>. It also contains <b>Database class</b> which helps connecting to <b>mySQL database</b>.
-I decided to write it because I needed to have fully working MVC template without using any framework.
+This is a <b>simple MVC project template based on OOP and written in PHP</b>. It also contains <b>Database class</b> which helps connecting to <b>mySQL database</b>.  
+
+I decided to write it because I needed to have fully working MVC template without using any framework.  
+
 With finishing this project everyone who doesn't want to use frameworks will not waste time in creating from scratch the MVC template.
 
 ## How does it work?
 
 <b>index.html</b> file is opened by default. <b>All Important files and scripts are loaded.</b>  
-It is created an instance of a <b>class Application</b> which processes the URLs, checks if controller or view exists and executes them. 
+It is created an instance of a <b>class Application</b> which processes the URLs, checks if controller or view exists and executes them.  
+
 If there are no controller and view set in the URL then the default controller and view are set.  
-If you request <b>controller or action that not exist</b> then the <b>Page Not Found view</b> is returned.
+
+If you request <b>controller or action that not exist</b> then the <b>Page Not Found view</b> is returned.  
+
 Every custom defined controller <b>extends the base Controller class</b>.  
-In the base Controller class the view and model are set. 
-<b>View class</b> implements the View logic and it is responsible for rendering the view. And the <b>model</b> will initialize and map your data whether you read it from file or database.
+
+In the base Controller class the view and model are set.  
+
+<b>View class</b> implements the View logic and it is responsible for rendering the view. And the <b>model</b> will initialize and map your data whether you read it from file or database.  
 
 Let's say we have <b>homeController</b> and <b>index View</b>. 
 
@@ -30,7 +37,7 @@ The project is separated in two main folders - <b>app and public</b>.
 - The app folder contains <b>all the server logic</b> like Controller class, View class, all models, etc.  
 - The public folder contains all the <b>client logic</b> - like base index.html file, js files, css styles, etc.
 
-<b>App folder</b>
+- <b>App folder</b>
     - <b>config</b> 
         - This folder contains file with <b>configuration values</b> such as database name, database user, etc.
     - <b>controller</b> 
@@ -49,12 +56,12 @@ The project is separated in two main folders - <b>app and public</b>.
     - <b>and view folder</b> 
         - This folder will contain <b>all custom defined views</b> or in other words all html webpages which the client will see.
 
-<b>Public folder</b>
+- <b>Public folder</b>
     - <b>index.html</b>
         - This is the <b>init page of the Web Application</b>. This is the first page to load. Application instance is created here in order to start the work of the Application. All required scripts and files are loaded.
     - <b>.htaccess</b>
         - Website configuration.
-    -<b>style.css</b>
+    - <b>style.css</b>
         - All common <b>styles.</b>
     - <b>js folder</b>
         - This folder will contain <b>all JavaScript files</b>.
